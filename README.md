@@ -1,4 +1,4 @@
-![logo](https://github.com/oldregime/oldregime/blob/main/bannerGitHub.png)
+[![header](./banner.png)](https://aar.one)
 
 <h1 align="center">Hi 👋, I'm Divyansh Joshi</h1>
 <h3 align="center">Software Engineer | Tech Enthusiast | IoT Explorer</h3>
@@ -45,10 +45,18 @@
 
 ---
 
+## 🌟 Featured Projects
+
+- **[Violet Void Theme](https://github.com/aaronedev/violet-void-theme)** 🟣: A sleek, violet-toned theme that enhances the user experience with Linux-like functionalities and custom Windows Terminal glyphs.
+
+- **Custom PowerShell Profile:** An optimized and visually appealing setup bringing Linux command-line efficiency to Windows.
+
+---
+
 ### 📊 GitHub Stats:
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=oldregime&theme=radical&hide_border=true&show_icons=true" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=oldregime&theme=radical&hide_border=true" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api?username=oldregime&theme=tokyonight&show_icons=true&hide_border=true&count_private=true" alt="GitHub Stats" height="165">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=oldregime&theme=tokyonight&hide_border=true" alt="GitHub Streak" height="165">
 </p>
 
 ---
@@ -57,6 +65,47 @@
 - 🎉 Completed a Government Internship at **Indian Space Lab** focusing on **Air Taxi Navigation** and **Satellite Projects**.
 - 🚀 Developed an automation framework at **LambdaTest**, reducing error detection time by **40%**.
 - 💡 Created a **Fraudulent App Detection Model** using **NLP** techniques.
+
+---
+
+### 📃 I love documentation
+
+- Writing well-documented code is a priority.
+- I'm working on an **Obsidian theme** with transparency effects as part of the **Violet Void Theme** series.
+
+![Obsidian](https://img.shields.io/badge/-Obsidian-483699?style=flat&logo=obsidian&logoColor=white)
+![Markdown](https://img.shields.io/badge/-Markdown-000000?style=flat&logo=markdown&logoColor=white)
+
+---
+
+### ⚙️ My Development Environment
+
+<table style="font-size: 11px">
+<tr>
+<td valign="top" width="50%">
+
+#### 🖥️ Windows PowerUser
+
+- ![Windows](https://img.shields.io/badge/-Windows-0078D6?style=flat&logo=windows&logoColor=white)
+- ![PowerShell](https://img.shields.io/badge/-PowerShell-5391FE?style=flat&logo=powershell&logoColor=white)
+- ![Azure](https://img.shields.io/badge/-Azure-0078D4?style=flat&logo=microsoft-azure&logoColor=white)
+- ![WSL](https://img.shields.io/badge/-WSL-0D1117?style=flat&logo=windows-subsystem-for-linux&logoColor=FCC624)
+- ![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white)
+
+</td>
+<td valign="top" width="50%">
+
+#### 🐧 Linux Enthusiast
+
+- ![Linux](https://img.shields.io/badge/-Linux-000000?style=flat&logo=linux&logoColor=FCC624)
+- ![Ubuntu](https://img.shields.io/badge/-Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white)
+- ![Debian](https://img.shields.io/badge/-Debian-A81D33?style=flat&logo=debian&logoColor=white)
+- ![Arch Linux](https://img.shields.io/badge/-Arch%20Linux-1793D1?style=flat&logo=arch-linux&logoColor=white)
+- ![Kali Linux](https://img.shields.io/badge/-Kali%20Linux-557C94?style=flat&logo=kali-linux&logoColor=white)
+
+</td>
+</tr>
+</table>
 
 ---
 
