@@ -1,63 +1,64 @@
-<h2 align="left">Hi 👋! My name is Divyansh Joshi, and I'm a Software Engineer and Developer from India.</h2>
+![logo](https://github.com/oldregime/oldregime/blob/main/bannerGitHub.png)
 
-###
+<h1 align="center">Hi 👋, I'm Divyansh Joshi</h1>
+<h3 align="center">Software Engineer | Tech Enthusiast | IoT Explorer</h3>
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=oldregime&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=oldregime&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
-</div>
+<img align="right" alt="coding" width="400" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIHXULVZAnLgBBrbstSxUOYIqNwnWVdskqUg&usqp=CAU">
 
-###
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=oldregime&label=Profile%20views&color=0e75b6&style=flat" alt="oldregime" /> </p>
 
-<img align="right" height="150" src="https://i.imgflip.com/65efzo.gif"  />
+---
 
-###
+### 🌟 About Me:
+- 🌱 Currently diving into **IoT, Java Streams, and Data Structures**.
+- 🛠️ Crafting projects in **E-commerce Development** and **Disaster Information Systems**.
+- 🚀 Experienced in building **automation frameworks** and **DevOps pipelines**.
+- 📫 Reach me at: **divyansh8065@gmail.com**.
+- 📄 Explore my [Resume](https://github.com/oldregime/resume.pdf).
+- 🎯 Connect with me on [LinkedIn](https://linkedin.com/in/theoldregime).
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="30" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="30" alt="csharp logo"  />
-</div>
+---
 
-###
+### 🌐 Connect with Me:
+<p align="left">
+<a href="https://linkedin.com/in/theoldregime" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="linkedin" height="30" width="40" /></a>
+<a href="https://github.com/oldregime" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" alt="github" height="30" width="40" /></a>
+</p>
 
-<div align="left">
-  <a href="mailto:divyansh8065@gmail.com"><img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo" /></a>
-  <a href="https://linkedin.com/in/theoldregime" target="blank"><img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo" /></a>
-  <a href="https://github.com/oldregime"><img src="https://img.shields.io/static/v1?message=GitHub&logo=github&label=&color=181717&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="github logo" /></a>
-</div>
+---
 
-###
+### 💻 Tech Stack:
+![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/React-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-%2343B02A.svg?style=for-the-badge&logo=selenium&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-%23039BE5.svg?style=for-the-badge&logo=firebase&logoColor=white)
 
-<br clear="both">
+---
 
-<img src="https://raw.githubusercontent.com/oldregime/oldregime/output/snake.svg" alt="Snake animation" />
+### 🔭 Projects:
+- **[E-commerce Platform](https://github.com/oldregime/ecommerce-platform):** Architected a scalable full-stack e-commerce solution using **Node.js**, **React**, and **Firebase**.
+- **[Disaster Information Aggregation System](https://github.com/oldregime/disaster-info):** Real-time disaster data platform leveraging **Java** and **JavaScript**.
+- **[NAS Server Development](https://github.com/oldregime/nas-server):** Built a NAS server with **Proxmox**, **TrueNAS**, and encrypted SSH tunneling.
 
-###
+---
 
-<h3>🔭 Current Projects:</h3>
-- E-commerce Platform Development  
-- Disaster Information Aggregation System  
-- NAS Server Development  
+### 📊 GitHub Stats:
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=oldregime&theme=radical&hide_border=true&show_icons=true" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=oldregime&theme=radical&hide_border=true" alt="GitHub Streak" />
+</p>
 
-<h3>🌱 Learning:</h3>
-- IoT with ESP32  
-- Advanced Java Streams  
-- Data Structures and Algorithms  
+---
 
-<h3>📫 Contact Me:</h3>
-- Email: divyansh8065@gmail.com  
-- LinkedIn: [linkedin.com/in/theoldregime](https://linkedin.com/in/theoldregime)  
+### 🏆 Achievements:
+- 🎉 Completed a Government Internship at **Indian Space Lab** focusing on **Air Taxi Navigation** and **Satellite Projects**.
+- 🚀 Developed an automation framework at **LambdaTest**, reducing error detection time by **40%**.
+- 💡 Created a **Fraudulent App Detection Model** using **NLP** techniques.
 
-<h3>⚡ Fun Fact:</h3>
-"I automate things even in my sleep!"
+---
+
+⭐ **Thank you for stopping by! Feel free to explore my repositories and connect with me for collaborations. Let's innovate together!**
+
