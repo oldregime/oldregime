@@ -1,45 +1,52 @@
-# 👋 Hi, I'm Divyansh Joshi  
+![logo](https://github.com/oldregime/oldregime/blob/main/bannerGitHub.png)
 
-🚀 **3rd-Year Engineering Student** | **Software Engineer** | **Tech Enthusiast**  
+<h1 align="center">Hi 👋, I'm Divyansh Joshi</h1>
+<h3 align="center">A passionate Software Engineer and Developer from India</h3>
 
-💻 Passionate about solving problems with code and building innovative projects.  
-🎯 Currently exploring **Java**, **Python**, and IoT with **ESP32** as part of my #100DaysOfESP32 journey.  
-🌟 Active on #100DaysOfCode, constantly learning and sharing knowledge.  
+<img align="right" alt="coding" width="400" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIHXULVZAnLgBBrbstSxUOYIqNwnWVdskqUg&usqp=CAU">
 
----
-
-## 🌐 Connect with Me  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/divyansh-joshi)  
-[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=twitter&logoColor=white)](https://twitter.com/DivyanshJoshi_)  
-[![GitHub](https://img.shields.io/badge/GitHub-%23181717.svg?logo=github&logoColor=white)](https://github.com/DivyanshJoshi)  
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=oldregime&label=Profile%20views&color=0e75b6&style=flat" alt="oldregime" /> </p>
 
 ---
 
-## 💻 Tech Stack  
+- 🌱 I’m currently learning **IoT, Java Streams, and Data Structures**  
+- 🚀 I’m working on **E-commerce platforms and Disaster Information Systems**  
+- 🛠️ I specialize in building automation frameworks and DevOps solutions  
+- 📝 I regularly share insights on [LinkedIn](https://linkedin.com/in/theoldregime)  
+- 📄 View my [Resume](https://github.com/oldregime/resume.pdf)  
+- 📫 Reach me at **divyansh8065@gmail.com**
+
+---
+
+## 🌐 Connect with Me:
+<p align="left">
+<a href="https://linkedin.com/in/theoldregime" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="linkedin" height="30" width="40" /></a>
+<a href="https://github.com/oldregime" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/github.svg" alt="github" height="30" width="40" /></a>
+</p>
+
+---
+
+## 💻 Tech Stack:
 ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white)  
 ![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)  
-![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)  
-![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)  
 ![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  
-![ESP32](https://img.shields.io/badge/ESP32-%230077B5.svg?style=for-the-badge&logo=iot&logoColor=white)  
+![React](https://img.shields.io/badge/React-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)  
+![Node.js](https://img.shields.io/badge/Node.js-%2343853D.svg?style=for-the-badge&logo=node.js&logoColor=white)  
+![Selenium](https://img.shields.io/badge/Selenium-%2343B02A.svg?style=for-the-badge&logo=selenium&logoColor=white)  
 
 ---
 
-## 📊 GitHub Stats  
-![](https://github-readme-stats.vercel.app/api?username=DivyanshJoshi&theme=radical&hide_border=true&show_icons=true)  
-![](https://github-readme-streak-stats.herokuapp.com/?user=DivyanshJoshi&theme=radical&hide_border=true)  
+## 🔭 My Top Projects:
+- **[E-commerce Platform](https://github.com/oldregime/ecommerce-platform):** Architected a full-stack e-commerce solution using Node.js, React, and Firebase.  
+- **[Disaster Information Aggregation System](https://github.com/oldregime/disaster-info):** Real-time disaster data aggregation platform with automated validation.  
+- **[NAS Server Development](https://github.com/oldregime/nas-server):** Deployed NAS server with Proxmox, TrueNAS, and RAID configurations.  
 
 ---
 
-## 🛠 Current Projects  
-- 🌟 Building **real-time disaster information aggregation software.**  
-- 💡 Exploring **Java Streams, DOM manipulation**, and **IoT projects.**  
-- 🔭 Open for collaboration on **Web Development** and **IoT-focused solutions.**  
+## 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=oldregime&theme=radical&hide_border=true&show_icons=true)  
+![](https://github-readme-streak-stats.herokuapp.com/?user=oldregime&theme=radical&hide_border=true)  
 
 ---
 
-💬 *"Code. Debug. Innovate. Repeat!"*  
-
-⭐ **Thank you for visiting my profile! Feel free to star my repositories and follow for updates. Let's connect and create amazing things together!**  
-
----
+⭐ **Thank you for visiting my profile! Let's connect and collaborate!**  
