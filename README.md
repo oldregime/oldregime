@@ -20,17 +20,6 @@
     <code><img width="50" src="https://user-images.githubusercontent.com/25181517/182534006-037f08b5-8e7b-4e5f-96b6-5d2a5558fa85.png" alt="Kubernetes" title="Kubernetes"/></code>
 </div>
 
-<h1 align="center">GitHub Contributions</h1>
-
-<p align="center">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=divyanshjosi&bg_color=12111d&color=ffffff&line=1055e0&point=00ff11&area=true&hide_border=true" alt="Contribution Graph" width="100%">
-</p>
-
-<h1 align="center">GitHub Stats</h1>
-<p align="center">
-    <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=divyanshjosi&theme=vision_friendly_dark">
-    <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=divyanshjosi&theme=github_dark&utcOffset=8" style="margin-left: 100px;">
-</p>
 
 <h1 align="center">Socials</h1>
 <p align="center">
