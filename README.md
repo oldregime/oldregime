@@ -1,28 +1,90 @@
-<!-- [![MasterHead](https://developers.giphy.com/branch/master/static/api-512d36c09662682717108a38bbb5c57d.gif)] -->
-
-<h1 align="center">Hi 👾, I'm Divyansh Joshi</h1>
-
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F7F7F7&width=435&lines=Turning+caffeine+into+code+%F0%9F%8D%AC;Transforming+bugs+into+features+%F0%9F%92%BB;99+problems%2C+but+a+commit+ain't+one!" alt="Typing SVG" /></a>
-
-<img align="center" alt="Coding" width="100%" style="border-radius: 20px;" src="https://iili.io/JYtYgfI.gif">
-
-<h1 align="center">Languages and Tools:</h1>
+<!-- 
+  ✨ Enhanced README for Divyansh Joshi
+  Creative • Project-focused • Professional
+-->
 
 <div align="center">
-    <!-- Add your preferred tools with proper credits -->
-    <code><img width="50" src="https://user-images.githubusercontent.com/25181517/192107854-765620d7-f909-4953-a6da-36e1ef69eea6.png" alt="HTTP" title="HTTP"/></code>
-    <code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108372-f71d70ac-7ae6-4c0d-8395-51d8870c2ef0.png" alt="Git" title="Git"/></code>
-    <code><img width="50" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript"/></code>
-    <code><img width="50" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React" title="React"/></code>
-    <code><img width="50" src="https://user-images.githubusercontent.com/25181517/192108890-200809d1-439c-4e23-90d3-b090cf9a4eea.png" alt="IntelliJ" title="IntelliJ"/></code>
-    <code><img width="50" src="https://user-images.githubusercontent.com/25181517/192106073-90fffafe-3562-4ff9-a37e-c77a2da0ff58.png" alt="C++" title="C++"/></code>
-    <code><img width="50" src="https://user-images.githubusercontent.com/25181517/182884177-d48a8579-2cd0-447a-b9a6-ffc7cb02560e.png" alt="MongoDB" title="MongoDB"/></code>
-    <code><img width="50" src="https://user-images.githubusercontent.com/25181517/182534006-037f08b5-8e7b-4e5f-96b6-5d2a5558fa85.png" alt="Kubernetes" title="Kubernetes"/></code>
+
+  ![MasterHead](https://iili.io/JYtYgfI.gif)
+
+  <h1>Hi 👾, I'm Divyansh Joshi</h1>
+  
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F7F7F7&center=true&vCenter=true&width=600&lines=Turning+caffeine+into+code+%F0%9F%8D%AC;Transforming+bugs+into+features+%F0%9F%92%BB;99+problems%2C+but+a+commit+ain't+one!;Building+AI+that+grades+like+a+teacher" alt="Typing SVG" />
+  </a>
+
+  <p>
+    🎓 B.Tech CSE @ VIT Bhopal (2026) | 🛠️ Full-Stack Developer | 🤖 AI & NLP Enthusiast
+  </p>
+
+  <div>
+    <a href="https://linkedin.com/in/theoldregime">
+      <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+    </a>
+    <a href="mailto:divyansh8065@gmail.com">
+      <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+    </a>
+    <a href="https://github.com/oldregime">
+      <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+    </a>
+  </div>
+
 </div>
 
+---
 
-<h1 align="center">Socials</h1>
-<p align="center">
-  <a href="https://www.linkedin.com/in/theoldregime/"><img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Linkedin.svg" alt="Linkedin Logo" width="32"></a>&nbsp;&nbsp;&nbsp;
-  <a href="mailto:divyansh8065@gmail.com"><img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Gmail.svg" alt="Gmail logo" height="32"></a>
-</p>
+## 🚀 Featured Projects
+
+| Project | Description | Tech Stack |
+|--------|-------------|-----------|
+| **[GradeWise](https://github.com/oldregime/gradewise)** | AI-powered grading tool that automates paper evaluation with feedback generation | Next.js, Genkit, GCP, Tailwind |
+| **Fraudulent App Detection** | ML model detecting fake apps from user reviews with **85% accuracy** | Python, NLP, Pandas, Scikit-learn |
+| **NAS Server** | Self-hosted storage with RAID, SSH tunneling & 99.9% uptime | Proxmox, Linux, RAID, SSH |
+| **MERN Expense Tracker** | Full-stack personal finance dashboard | React, Node, Express, MongoDB |
+
+> 💡 **All projects are open for collaboration!** Check out my [GitHub](https://github.com/oldregime)!
+
+---
+
+## 💻 Tech Stack
+
+### Languages & Frameworks
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+
+### DevOps & Cloud
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat&logo=amazon-aws&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
+
+### Databases
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white)
+
+---
+
+## 📈 GitHub Stats
+
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=oldregime&show_icons=true&theme=radical&count_private=true" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=oldregime&layout=compact&theme=radical" />
+</div>
+
+---
+
+## 📄 Resume
+
+📄 [Download my resume (PDF)](https://github.com/oldregime/oldregime/raw/main/resume.pdf)
+
+> 🔔 **Open to internships & collaborations in AI, Web Dev, and DevOps!**
+
+---
+
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=oldregime&color=blueviolet" alt="Profile views" />
+</div>
