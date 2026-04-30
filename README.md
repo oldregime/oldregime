@@ -11,7 +11,7 @@
   <p align="center">
     <strong>Computer Science Engineering @ VIT Bhopal</strong>
     <br />
-    Focused on Full-Stack Development, System Architecture, and Machine Learning.
+    Full-stack and systems-focused engineering student building practical AI, web, automation, and infrastructure tools.
   </p>
 
   <div>
@@ -35,32 +35,47 @@
 
 ### Core Competencies
 
-* **Software Engineering:** Java, Python, JavaScript (ES6+), React.js, Next.js.
+* **Software Engineering:** Java, Python, JavaScript, TypeScript, React.js, Next.js.
 * **Data Systems:** MongoDB, MySQL, Supabase, PostgreSQL, Pandas, Matplotlib.
-* **Infrastructure & DevOps:** Proxmox, Docker, AWS, Cloudflare, Git, Jenkins, Linux (SSH Tunneling, RAID).
-* **AI/ML:** NLP, Generative AI (Genkit, GCP), Automated Grading Systems.
+* **Infrastructure & DevOps:** Linux, Docker, GitHub Actions, Proxmox, Cloudflare, AWS, SSH tunneling.
+* **AI/ML:** NLP pipelines, generative AI workflows, automated evaluation systems.
+
+---
+
+### Building Now
+
+* A cleaner portfolio and GitHub project system for shipping finished work in public.
+* AI-assisted grading and evaluation workflows for student and educator use cases.
+* Automation around home-lab infrastructure, remote access, and developer tooling.
 
 ---
 
 ### Featured Projects
 
 #### GradeWise | AI-Powered Evaluation
-* Developed a full-stack Next.js application to automate student paper grading.
-* Integrated Google Cloud Platform and Genkit for automated feedback generation and similarity scoring.
-* Optimized evaluation workflows for educators using specialized AI flows.
+* Full-stack grading workflow for paper evaluation, feedback generation, and similarity scoring.
+* Built around Next.js, Google Cloud Platform, and Genkit-based AI flows.
+* Repo: [oldregime/GradeWise](https://github.com/oldregime/GradeWise)
 
 #### Enterprise NAS Infrastructure
-* Deployed a Proxmox-based NAS server utilizing RAID storage for 99.9% data availability.
-* Implemented secure remote access via encrypted SSH tunneling for 15+ primary users.
-* Achieved 20% faster file transfer speeds through low-level RAID optimization.
+* Proxmox-based NAS and file-management setup focused on practical reliability, backups, and remote access.
+* Uses Linux administration, RAID storage, SSH tunneling, and structured operational notes.
+* Repo: [oldregime/NAS-Server-Development-2024](https://github.com/oldregime/NAS-Server-Development-2024)
 
 #### Fraudulent App Detection (NLP)
-* Engineered a machine learning model with 85% accuracy in identifying fraudulent applications.
-* Processed datasets of 1,000+ reviews using custom NLP preprocessing and vectorization pipelines.
+* NLP project for classifying suspicious application behavior from review and metadata signals.
+* Includes preprocessing, vectorization, and model-evaluation experiments.
+* Repo: [oldregime/FraudApp-1](https://github.com/oldregime/FraudApp-1)
 
-#### Digital Architecture Framework
-* Designed a hierarchical file management system based on PARA, GTD, and Johnny Decimal methodologies.
-* Reduced file retrieval latency by 60% through standardized naming conventions and structured libraries.
+#### ESP32 Wake-on-LAN Telegram
+* Power-efficient Wake-on-LAN controller using ESP32 and Telegram bot control.
+* Combines embedded systems, networking, and remote automation.
+* Repo: [oldregime/esp32-wake-on-lan-telegram](https://github.com/oldregime/esp32-wake-on-lan-telegram)
+
+#### MERN Tracker
+* Expense-tracking web app with a deployed frontend and MERN-style project structure.
+* Demo: [merntracker.vercel.app](https://merntracker.vercel.app)
+* Repo: [oldregime/MERN_Tracker](https://github.com/oldregime/MERN_Tracker)
 
 ---
 
@@ -81,14 +96,14 @@
 
 ### Contact and Collaboration
 
-I am currently open to internships and collaborative projects in AI/ML, DevOps, and Web Architecture.
+I am currently open to internships, open-source collaboration, and practical projects across AI/ML, DevOps, and web architecture.
 
 * **Location:** Indore, India / Bhopal
 * **Resume:** [Access PDF](https://github.com/oldregime/oldregime/raw/main/resume.pdf)
 * **Network:** [linkedin.com/in/theoldregime](https://linkedin.com/in/theoldregime)
-* **Terminal:** `ssh divyansh@theoldregime.social`
+* **Portfolio:** [theoldregime.social](https://theoldregime.social)
 
 <div align="center">
   <br />
-  <sub>Last updated: January 2026</sub>
+  <sub>Last updated: April 2026</sub>
 </div>
