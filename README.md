@@ -101,7 +101,7 @@ I am currently open to internships, open-source collaboration, and practical pro
 * **Location:** Indore, India / Bhopal
 * **Resume:** [Access PDF](https://drive.google.com/file/d/1WXyFGXlW0SzExUzoIE82yDmugBNTIAl1/view?usp=sharing)
 * **Network:** [linkedin.com/in/theoldregime](https://www.linkedin.com/in/divyanshjoshidev/)
-* **Portfolio:** [theoldregime.social]([https://theoldregime.social](https://oldregime.github.io/))
+* **Portfolio:** [theoldregime.social](https://oldregime.github.io/)
 
 <div align="center">
   <br />
