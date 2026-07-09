@@ -16,8 +16,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Generate README
-        uses: collectioneur/readme-aura@main
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build README
+        run: npx -y readme-aura build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Convert relative image paths to absolute URLs
+        run: |
+          sed -i 's|(\./\.github/assets/|(https://raw.githubusercontent.com/oldregime/oldregime/main/.github/assets/|g' README.md
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md .github/assets/
+          git diff-index --quiet HEAD || git commit -m "chore: auto-generate README [skip ci]"
+          git push origin main
