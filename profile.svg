@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" width="1100" height="540">
+    <style>
+        .title { font: bold 32px 'Segoe UI', Ubuntu, sans-serif; fill: #8aadf4; }
+        .subtitle { font: 600 16px 'Segoe UI', Ubuntu, sans-serif; fill: #a6da95; }
+        .terminal { font: 13px 'Fira Code', Consolas, monospace; fill: #cad3f5; }
+        .label { font: bold 14px 'Segoe UI', Ubuntu, sans-serif; fill: #c6a0f6; }
+        .value { font: 14px 'Segoe UI', Ubuntu, sans-serif; fill: #cad3f5; }
+        .braille { font: 12px Consolas, monospace; fill: #8aadf4; }
+        .key { fill: #f5a97f; font-weight: bold; }
+    </style>
+    
+    <!-- Background -->
+    <rect width="1100" height="540" fill="#1e1e2e" rx="15" stroke="#363a4f" stroke-width="2"/>
+    
+    <!-- Terminal Window -->
+    <rect x="25" y="25" width="550" height="490" fill="#181825" rx="10" stroke="#363a4f" stroke-width="1"/>
+    <!-- Mac Buttons -->
+    <circle cx="45" cy="45" r="6" fill="#ed8796"/>
+    <circle cx="65" cy="45" r="6" fill="#eed49f"/>
+    <circle cx="85" cy="45" r="6" fill="#a6da95"/>
+    <text x="300" y="50" class="terminal" fill="#8087a2" text-anchor="middle">dj@loqfedora:~</text>
+    <line x1="25" y1="65" x2="575" y2="65" stroke="#363a4f" stroke-width="1"/>
+    <text x="35" y="90" class="braille" xml:space="preserve">                ⣀⠤⠒⠑⠢⢄</text>
+<text x="35" y="104" class="braille" xml:space="preserve">            ⢀⠠⠐⠉      ⠈⠐⠠⢀</text>
+<text x="35" y="118" class="braille" xml:space="preserve">          ⢰⠈              ⣈⢶</text>
+<text x="35" y="132" class="braille" xml:space="preserve">          ⢸           ⡀  ⠉ ⢸</text>
+<text x="35" y="146" class="braille" xml:space="preserve">          ⣿⢸⠑⠲⠉⢲   ⡠⠔⠈     ⢸</text>
+<text x="35" y="160" class="braille" xml:space="preserve">          ⢸⢠⣜⡀ ⠈⠒⠤⡀⠁       ⢸</text>
+<text x="35" y="174" class="braille" xml:space="preserve">          ⢸⢬⡙⠻⣄⣠⣄⣀⠁⣄       ⠸</text>
+<text x="35" y="188" class="braille" xml:space="preserve">         ⡠⢺⡀⠈⠑⠉⢸⠛⠿⡏⡞   ⣤⡆  ⢠</text>
+<text x="35" y="202" class="braille" xml:space="preserve">      ⢀⡔⠊  ⢈⡱ ⠱ ⠉⠒ ⠇   ⣩⠵⢔⠊⠁</text>
+<text x="35" y="216" class="braille" xml:space="preserve">      ⢸⠈⠑⢤⡖⠁ ⢀⣼⠉⠒⣤⣀⣀⡠⠔⣭⣤⠖⡍⡇</text>
+<text x="35" y="230" class="braille" xml:space="preserve">      ⠘⢄⡠⠠ ⡠⠒⠁⣼⠒⠩ ⢀⡡⠔⠊⠹⣿ ⢀⡇</text>
+<text x="35" y="244" class="braille" xml:space="preserve">      ⣀⠤⠊⠉⠙⠢⢄⡀⢧⠑⠲⠚⠕   ⣠⣿⠊⠁</text>
+<text x="35" y="258" class="braille" xml:space="preserve">     ⡟⠢      ⢈⡙⢄⡈⠇⣀⠤⢲⣿⣿⣿</text>
+<text x="35" y="272" class="braille" xml:space="preserve">     ⣹⣷⡀⢄⠁⠂⡔⠊⠁ ⢸⡿⠋⠈⠑⢾⣿⡿⢇⠁⠂⢄</text>
+<text x="35" y="286" class="braille" xml:space="preserve">  ⡤⣒⡫⠄⠉⠃⠄⣸⣶⡇   ⠚ ⠛⠛⣰⣿⠟⠉⠁ ⢘⣻</text>
+<text x="35" y="300" class="braille" xml:space="preserve">  ⡧⣀⠁⠂⠄⣤⠢⣌⢽⡇⠁⢀⡄⠚⡶⣶⣾⡿⠋ ⡠⠔⠊⠇⢸</text>
+<text x="35" y="314" class="braille" xml:space="preserve">  ⠳⢄⡉⠒⠤⣀⣏⡠⢼⡇ ⢸⣿⣿⣿⣟⣉⢤⠂⠁    ⢸</text>
+<text x="35" y="328" class="braille" xml:space="preserve">    ⠈⣷⣦⣄⣯⣤⠚⡇ ⠸⠿⢿⣿⡟⡧⠚      ⢸</text>
+<text x="35" y="342" class="braille" xml:space="preserve">     ⠙⢿⢿⣿⠿ ⣇⠤⠒⠁ ⢸ ⠇       ⢸</text>
+<text x="35" y="356" class="braille" xml:space="preserve">      ⠈⠁                  ⠈⠁</text>
+<text x="35" y="370" class="braille" xml:space="preserve">       ⠈⠂⢄⡀      ⠑⠂ ⣀⡤⠒⠁</text>
+<text x="35" y="384" class="braille" xml:space="preserve">          ⠈⠑⠢⢄⡀ ⣀⡠⠔⢻⡄⡇</text>
+<text x="35" y="398" class="braille" xml:space="preserve">              ⠈⡋⢸  ⢸⠇⡇</text>
+<text x="35" y="412" class="braille" xml:space="preserve">         ⢠⠔⠊⡉⠑⠊⢩⡾  ⢸⡇⡇</text>
+<text x="35" y="426" class="braille" xml:space="preserve">          ⠉⠒⠤⣐⠒⠄⡉⠒⠖⠊⡲⠇</text>
+<text x="35" y="440" class="braille" xml:space="preserve">              ⠈⠚⢤⣀⠂⣤⠍⠂</text>
+<text x="210" y="90" class="terminal" font-weight="bold" fill="#8aadf4">dj</text><text x="225" y="90" class="terminal" font-weight="bold" fill="#cad3f5">@</text><text x="235" y="90" class="terminal" font-weight="bold" fill="#c6a0f6">loqfedora</text>
+<text x="210" y="106" class="terminal" fill="#8087a2">------------</text>
+<text x="210" y="122" class="terminal" xml:space="preserve"><tspan class="key">host  </tspan> <tspan>82XT (LOQ 15APH8)</tspan></text>
+<text x="210" y="138" class="terminal" xml:space="preserve"><tspan class="key">os    </tspan> <tspan>Fedora Linux 44 (KDE Plasma Desktop Edition) x86_64</tspan></text>
+<text x="210" y="154" class="terminal" xml:space="preserve"><tspan class="key">de    </tspan> <tspan>KWin (Wayland)</tspan></text>
+<text x="210" y="170" class="terminal" xml:space="preserve"><tspan class="key">disp  </tspan> <tspan>1920x1080 @ 1.25x in 16", 120 Hz [Built-in]</tspan></text>
+<text x="210" y="186" class="terminal" xml:space="preserve"><tspan class="key">pkgs  </tspan> <tspan>2981</tspan></text>
+<text x="210" y="202" class="terminal" xml:space="preserve"><tspan class="key">shell </tspan> <tspan>zsh 5.9</tspan></text>
+<text x="210" y="218" class="terminal" xml:space="preserve"><tspan class="key">cpu   </tspan> <tspan>AMD Ryzen 7 7840HS (16) @ 3.80 GHz - 39.9°C</tspan></text>
+<text x="210" y="234" class="terminal" xml:space="preserve"><tspan class="key">gpu   </tspan> <tspan>NVIDIA GeForce RTX 4050 Laptop GPU - 40.0°C</tspan></text>
+<text x="210" y="250" class="terminal" xml:space="preserve"><tspan class="key">gpu   </tspan> <tspan>AMD Radeon 780M Graphics - 40.0°C</tspan></text>
+<text x="210" y="266" class="terminal" xml:space="preserve"><tspan class="key">kernel</tspan> <tspan>Linux 7.0.12-201.fc44.x86_64</tspan></text>
+<text x="210" y="282" class="terminal" xml:space="preserve"><tspan class="key">uptime</tspan> <tspan>2h 55m</tspan></text>
+<text x="210" y="298" class="terminal" xml:space="preserve"><tspan class="key">os    </tspan> <tspan>age  22 days</tspan></text>
+<text x="210" y="314" class="terminal" xml:space="preserve"><tspan class="key">memory</tspan> <tspan>10.71 GiB / 14.80 GiB (72%)</tspan></text>
+<text x="210" y="330" class="terminal"><tspan fill="#ed8796">● </tspan><tspan fill="#a6da95">● </tspan><tspan fill="#eed49f">● </tspan><tspan fill="#8aadf4">● </tspan><tspan fill="#f5bde6">● </tspan><tspan fill="#8bd5ca">● </tspan><tspan fill="#f4dbd6">● </tspan><tspan fill="#a5adcb">● </tspan></text>
+
+    <text x="605" y="65" class="title">Divyansh Joshi</text>
+    <text x="605" y="95" class="subtitle">Computer Science Student • AI Developer • Linux Enthusiast</text>
+    
+    <!-- Tech Stack Box -->
+    <rect x="605" y="125" width="465" height="180" fill="#181825" rx="8" stroke="#363a4f" stroke-width="1"/>
+    <text x="625" y="155" class="subtitle" fill="#8aadf4">💻 Tech Stack</text>
+    
+    <text x="625" y="185" class="value"><tspan class="label">Languages  :</tspan> C++, Python, JavaScript</text>
+    <text x="625" y="210" class="value"><tspan class="label">AI / ML    :</tspan> LangGraph, Large Language Models</text>
+    <text x="625" y="235" class="value"><tspan class="label">Sys &amp; Infra:</tspan> Proxmox, TrueNAS, ZFS RAID, Linux</text>
+    <text x="625" y="260" class="value"><tspan class="label">Hardware   :</tspan> ESP32 Embedded Systems</text>
+    <text x="625" y="285" class="value"><tspan class="label">Networking :</tspan> Zero-trust architectures</text>
+    
+    <!-- Connect Box -->
+    <rect x="605" y="325" width="465" height="190" fill="#181825" rx="8" stroke="#363a4f" stroke-width="1"/>
+    <text x="625" y="355" class="subtitle" fill="#8aadf4">🔗 Connect &amp; Info</text>
+    
+    <text x="625" y="390" class="value"><tspan class="label">Education  :</tspan> B.Tech CS @ Vellore Institute of Technology</text>
+    <text x="625" y="420" class="value"><tspan class="label">Email      :</tspan> divyanshjoshidev@gmail.com</text>
+    <text x="625" y="450" class="value"><tspan class="label">GitHub     :</tspan> github.com/oldregime</text>
+    <text x="625" y="480" class="value"><tspan class="label">LinkedIn   :</tspan> linkedin.com/in/divyanshjoshidev</text>
+    </svg>
