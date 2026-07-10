@@ -1,19 +1,13 @@
 import base64
-from PIL import Image
-import numpy as np
 
-img = Image.open('/mnt/personal file/from w11/github/profile_cropped.jpg').convert('L')
-img = img.resize((55, 36))
-data = np.array(img)
+def get_base64_img(path):
+    with open(path, 'rb') as f:
+        return base64.b64encode(f.read()).decode('utf-8')
 
-chars = ['@', '%', '#', '*', '+', '=', '-', ':', '.', ' ']
-ascii_lines = []
-for row in data:
-    line = ''.join([chars[min(9, int((p) / 256 * 10))] for p in row])
-    ascii_lines.append(line)
+b64_dark = get_base64_img('/mnt/personal file/from w11/github/oldregime_readme/profile_dark.png')
+b64_light = get_base64_img('/mnt/personal file/from w11/github/oldregime_readme/profile_light.png')
 
 right_side = [
-    '',
     '<tspan class="key">Hi</tspan>, <tspan class="value">I\'m Divyansh Joshi</tspan>',
     '',
     '<tspan class="cc">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">oldregime</tspan>',
@@ -30,12 +24,10 @@ right_side = [
     '<tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">divyanshjoshidev</tspan>',
 ]
 
-while len(right_side) < len(ascii_lines):
-    right_side.append('')
-
 def get_svg(is_dark):
     bg_color = "#0d1117" if is_dark else "#f6f8fa"
     text_color = "#c9d1d9" if is_dark else "#24292f"
+    b64 = b64_dark if is_dark else b64_light
     
     if is_dark:
         css = """
@@ -64,18 +56,14 @@ size-adjust: 109%;
 text, tspan {{white-space: pre;}}
 </style>
 <rect width="985px" height="530px" fill="{bg_color}" rx="15"/>
+<image href="data:image/png;base64,{b64}" x="15" y="15" width="400" height="500" preserveAspectRatio="xMidYMid slice" />
 <text fill="{text_color}" class="ascii">
 """
     
     y = 30
-    for i in range(len(ascii_lines)):
-        asc = ascii_lines[i].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-        right = right_side[i] if i < len(right_side) else ""
-        
-        svg += f'<tspan x="15" y="{y}">{asc}</tspan>\n'
-        if right:
-            svg += f'<tspan x="450" y="{y}">{right}</tspan>\n'
-        y += 14
+    for right in right_side:
+        svg += f'<tspan x="450" y="{y}">{right}</tspan>\n'
+        y += 18
         
     svg += """
 </text>
@@ -87,3 +75,5 @@ with open('/mnt/personal file/from w11/github/oldregime_readme/dark_mode.svg', '
     f.write(get_svg(True))
 with open('/mnt/personal file/from w11/github/oldregime_readme/light_mode.svg', 'w', encoding='utf-8') as f:
     f.write(get_svg(False))
+
+print("Created SVGs with perfectly embedded high-res ASCII PNGs!")
