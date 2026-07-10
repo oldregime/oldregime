@@ -1,8 +1,122 @@
 <div align="center">
-  <a href="https://github.com/oldregime/oldregime">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg">
-      <img alt="Divyansh Joshi's GitHub Profile README" src="light_mode.svg">
-    </picture>
-  </a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="terminal_dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="terminal_light.svg">
+    <img alt="Divyansh's GitHub Terminal" src="terminal_dark.svg">
+  </picture>
+</div>
+
+---
+
+## Tech Stack
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=python,cpp,js,ts,react,nextjs,nodejs,express,linux,docker,git,github,mongodb,mysql,postgres,redis,bash,vscode,idea,neovim,aws,pytorch,tensorflow&perline=11"/>
+
+</p>
+
+---
+
+## About Me
+
+```cpp
+class DivyanshJoshi {
+
+public:
+
+    string education = "B.Tech ECE @ VIT Bhopal";
+
+    vector<string> interests = {
+
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Backend Engineering",
+        "DevOps",
+        "Linux",
+        "System Design",
+        "Cloud Computing"
+
+    };
+
+    vector<string> currentlyLearning = {
+
+        "LLMs",
+        "Kubernetes",
+        "AWS",
+        "MLOps",
+        "Distributed Systems"
+
+    };
+
+    string motto =
+        "Build. Break. Learn. Repeat.";
+
+};
+```
+
+---
+
+## Featured Projects
+
+| Project | Description |
+|---------|-------------|
+| 🚀 **PeerStore** | AI-powered research & knowledge platform |
+| 📚 **VitGrader** | Grade prediction & academic utilities for VIT |
+| 🤖 **AI Agents** | LangGraph + FastAPI + LLM workflows |
+| 🐧 **Linux Labs** | Self-hosting, Docker & automation projects |
+
+---
+
+## GitHub Analytics
+
+<p align="center">
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=oldregime&show_icons=true&theme=tokyonight&hide_border=true"/>
+
+<img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=oldregime&theme=tokyonight&hide_border=true"/>
+
+</p>
+
+<p align="center">
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=oldregime&layout=compact&theme=tokyonight&hide_border=true"/>
+
+</p>
+
+---
+
+## Contribution Graph
+
+<p align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=oldregime&theme=tokyo-night"/>
+
+</p>
+
+---
+
+## Visitor Count
+
+<p align="center">
+
+<img src="https://komarev.com/ghpvc/?username=oldregime&label=Profile%20Views&color=blueviolet&style=flat"/>
+
+</p>
+
+---
+
+## Quote
+
+> *"Programs must be written for people to read, and only incidentally for machines to execute."*  
+> — Harold Abelson
+
+---
+
+<div align="center">
+
+### Thanks for visiting 👋
+
+*"Code is temporary. Skills are permanent."*
+
 </div>

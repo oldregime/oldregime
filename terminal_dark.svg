@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="850px" height="920px" font-size="15px">
+<style>
+@font-face {
+src: local('Consolas'), local('Consolas Bold');
+font-family: 'ConsolasFallback';
+font-display: swap;
+-webkit-size-adjust: 109%;
+size-adjust: 109%;
+}
+
+        .key { fill: #e3b341; }
+        .value { fill: #a5d6ff; }
+        .cc { fill: #8b949e; }
+        .ascii { fill: #a5d6ff; font-weight: bold; }
+        
+text, tspan {white-space: pre;}
+</style>
+<rect width="850px" height="920px" fill="#0d1117" rx="15"/>
+<text>
+<tspan x="40" y="50" class="ascii">        ██████╗ ██╗██╗   ██╗██╗   ██╗ █████╗ ███╗   ██╗███████╗██╗  ██╗</tspan>
+<tspan x="40" y="70" class="ascii">        ██╔══██╗██║██║   ██║╚██╗ ██╔╝██╔══██╗████╗  ██║██╔════╝██║  ██║</tspan>
+<tspan x="40" y="90" class="ascii">        ██║  ██║██║██║   ██║ ╚████╔╝ ███████║██╔██╗ ██║███████╗███████║</tspan>
+<tspan x="40" y="110" class="ascii">        ██║  ██║██║╚██╗ ██╔╝  ╚██╔╝  ██╔══██║██║╚██╗██║╚════██║██╔══██║</tspan>
+<tspan x="40" y="130" class="ascii">        ██████╔╝██║ ╚████╔╝    ██║   ██║  ██║██║ ╚████║███████║██║  ██║</tspan>
+<tspan x="40" y="150" class="ascii">        ╚═════╝ ╚═╝  ╚═══╝     ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝</tspan>
+<tspan x="40" y="190"><tspan class="key">oldregime@github </tspan><tspan class="cc">--------------------------------------------------------------</tspan></tspan>
+<tspan x="40" y="230"><tspan class="cc">.</tspan><tspan class="key">OS</tspan><tspan class="cc">..................................... </tspan><tspan class="value">Arch Linux • Windows 11 • Android 16</tspan></tspan>
+<tspan x="40" y="250"><tspan class="cc">.</tspan><tspan class="key">Host</tspan><tspan class="cc">................................... </tspan><tspan class="value">VIT Bhopal University</tspan></tspan>
+<tspan x="40" y="270"><tspan class="cc">.</tspan><tspan class="key">Role</tspan><tspan class="cc">................................... </tspan><tspan class="value">Software Engineer | AI Engineer</tspan></tspan>
+<tspan x="40" y="290"><tspan class="cc">.</tspan><tspan class="key">Editor</tspan><tspan class="cc">................................. </tspan><tspan class="value">VS Code • JetBrains • Neovim</tspan></tspan>
+<tspan x="40" y="310"><tspan class="cc">.</tspan><tspan class="key">Terminal</tspan><tspan class="cc">............................... </tspan><tspan class="value">Kitty • Bash • PowerShell</tspan></tspan>
+<tspan x="40" y="350"><tspan class="cc">.</tspan><tspan class="key">Languages.Programming</tspan><tspan class="cc">................. </tspan><tspan class="value">Python • C++ • JavaScript • TypeScript</tspan></tspan>
+<tspan x="40" y="370"><tspan class="cc">.</tspan><tspan class="key">Languages.Web</tspan><tspan class="cc">......................... </tspan><tspan class="value">React • Node.js • HTML • CSS</tspan></tspan>
+<tspan x="40" y="390"><tspan class="cc">.</tspan><tspan class="key">Languages.Database</tspan><tspan class="cc">.................... </tspan><tspan class="value">PostgreSQL • MongoDB • SQLite</tspan></tspan>
+<tspan x="40" y="410"><tspan class="cc">.</tspan><tspan class="key">Languages.DevOps</tspan><tspan class="cc">...................... </tspan><tspan class="value">Docker • Git • Linux • Nginx</tspan></tspan>
+<tspan x="40" y="430"><tspan class="cc">.</tspan><tspan class="key">Languages.AI</tspan><tspan class="cc">.......................... </tspan><tspan class="value">PyTorch • TensorFlow • LangChain</tspan></tspan>
+<tspan x="40" y="470"><tspan class="cc">.</tspan><tspan class="key">Interests.Software</tspan><tspan class="cc">.................... </tspan><tspan class="value">AI • Self Hosting • Linux • Automation</tspan></tspan>
+<tspan x="40" y="490"><tspan class="cc">.</tspan><tspan class="key">Interests.Hardware</tspan><tspan class="cc">.................... </tspan><tspan class="value">Homelab • Networking • Custom ROMs</tspan></tspan>
+<tspan x="40" y="530"><tspan class="cc">----------------------------------------- </tspan><tspan class="key">Contact</tspan></tspan>
+<tspan x="40" y="570"><tspan class="cc">.</tspan><tspan class="key">Email</tspan><tspan class="cc">.................................. </tspan><tspan class="value">divyansh8065@gmail.com</tspan></tspan>
+<tspan x="40" y="590"><tspan class="cc">.</tspan><tspan class="key">GitHub</tspan><tspan class="cc">................................. </tspan><tspan class="value">github.com/oldregime</tspan></tspan>
+<tspan x="40" y="610"><tspan class="cc">.</tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">............................... </tspan><tspan class="value">linkedin.com/in/divyansh-joshi</tspan></tspan>
+<tspan x="40" y="650"><tspan class="cc">----------------------------------------- </tspan><tspan class="key">Current Focus</tspan></tspan>
+<tspan x="40" y="690"><tspan class="cc">.</tspan><tspan class="key">Building</tspan><tspan class="cc">............................... </tspan><tspan class="value">PeerStore</tspan></tspan>
+<tspan x="40" y="710"><tspan class="cc">.</tspan><tspan class="key">Working On</tspan><tspan class="cc">............................. </tspan><tspan class="value">AI Agents • RAG • LLMs</tspan></tspan>
+<tspan x="40" y="730"><tspan class="cc">.</tspan><tspan class="key">Learning</tspan><tspan class="cc">............................... </tspan><tspan class="value">Kubernetes • AWS • MLOps</tspan></tspan>
+<tspan x="40" y="750"><tspan class="cc">.</tspan><tspan class="key">Looking For</tspan><tspan class="cc">............................ </tspan><tspan class="value">Open Source &amp; SWE Opportunities</tspan></tspan>
+<tspan x="40" y="790"><tspan class="cc">----------------------------------------- </tspan><tspan class="key">GitHub</tspan></tspan>
+<tspan x="40" y="830"><tspan class="cc">.</tspan><tspan class="key">Repos</tspan><tspan class="cc">................................. </tspan><tspan class="value">Public Projects</tspan></tspan>
+<tspan x="40" y="850"><tspan class="cc">.</tspan><tspan class="key">Commits</tspan><tspan class="cc">............................... </tspan><tspan class="value">Daily</tspan></tspan>
+<tspan x="40" y="870"><tspan class="cc">.</tspan><tspan class="key">Contributions</tspan><tspan class="cc">......................... </tspan><tspan class="value">Always Green 🌱</tspan></tspan>
+
+</text>
+</svg>
