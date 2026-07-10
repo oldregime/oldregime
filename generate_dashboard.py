@@ -1,4 +1,6 @@
-import sys
+import subprocess
+import json
+import os
 
 ascii_art = """⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣤⣤⣤⣤⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣠⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣶⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -18,8 +20,45 @@ ascii_art = """⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣤⣤⣤⣤⣤⣄⣀⡀⠀⠀⠀�
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠳⢤⣄⣀⣻⣄⡇⠀⡟⢹⠿⣿⠢⡹⣿⡛⠛⠛⠛⠉⠀⠀⣿⠒⣦⡔⠐⣯⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡯⢿⡇⠀⢻⠈⠣⣹⣆⠑⡜⣷⡀⠀⠀⠀⠀⢀⡇⠀⣸⣇⠀⢹⡀⠀⠀⠀⠀⠀"""
 
+def fetch_stats():
+    stats = {'repos': 0, 'followers': 0, 'stars': 0, 'commits': 0, 'prs': 0}
+    try:
+        # User stats
+        user_info = subprocess.check_output(['gh', 'api', 'user']).decode()
+        data = json.loads(user_info)
+        stats['repos'] = data.get('public_repos', 0)
+        stats['followers'] = data.get('followers', 0)
+        login = data.get('login', 'oldregime')
 
-def get_svg(is_dark):
+        # Stars
+        repos_info = subprocess.check_output(['gh', 'api', f'users/{login}/repos', '--paginate', '-q', '.[].stargazers_count']).decode()
+        stats['stars'] = sum([int(x) for x in repos_info.split() if x.strip()])
+
+        # Commits (Contributions last year)
+        query = f"""
+        query {{
+          user(login: "{login}") {{
+            contributionsCollection {{
+              contributionCalendar {{
+                totalContributions
+              }}
+            }}
+          }}
+        }}
+        """
+        graphql_out = subprocess.check_output(['gh', 'api', 'graphql', '-f', f'query={query}']).decode()
+        graphql_data = json.loads(graphql_out)
+        stats['commits'] = graphql_data['data']['user']['contributionsCollection']['contributionCalendar']['totalContributions']
+        
+        # PRs
+        prs_out = subprocess.check_output(['gh', 'api', 'search/issues', '-q', '.total_count', '-f', f'q=author:{login} type:pr']).decode()
+        stats['prs'] = int(prs_out.strip())
+        
+    except Exception as e:
+        print(f"Warning: Failed to fetch stats completely: {e}")
+    return stats
+
+def get_svg(is_dark, stats):
     bg_color = "#09090b" if is_dark else "#f4f4f5"
     border_color = "#27272a" if is_dark else "#e4e4e7"
     text_main = "#f4f4f5" if is_dark else "#09090b"
@@ -31,7 +70,6 @@ def get_svg(is_dark):
     ascii_svg = ""
     y = 120
     for line in ascii_art.split('\n'):
-        # preserve spacing
         safe_line = line.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace(' ', '&#160;')
         ascii_svg += f'<text x="15" y="{y}" class="ascii-text">{safe_line}</text>\n'
         y += 20
@@ -63,7 +101,6 @@ def get_svg(is_dark):
     <line x1="520" y1="100" x2="1170" y2="100"/>
 
     <!-- Section 1: Basic Info & Languages -->
-    <!-- Basic Info -->
     <text x="520" y="130" class="label">🐧 OS</text><text x="630" y="130" class="value">: Fedora Linux</text>
     <text x="520" y="155" class="label">🐚 Shell</text><text x="630" y="155" class="value">: zsh</text>
     <text x="520" y="180" class="label">💻 Editor</text><text x="630" y="180" class="value">: VS Code, Neovim</text>
@@ -82,7 +119,6 @@ def get_svg(is_dark):
     <line x1="520" y1="275" x2="1170" y2="275"/>
 
     <!-- Section 2: Tech Stack & Interests -->
-    <!-- Tech Stack -->
     <text x="520" y="300" class="section-title" fill="#3b82f6">🚀 Tech Stack</text>
     <text x="520" y="325" class="label">Frontend</text><text x="620" y="325" class="value">: React, HTML, CSS, Tailwind</text>
     <text x="520" y="350" class="label">Backend</text><text x="620" y="350" class="value">: FastAPI, Node.js</text>
@@ -114,37 +150,37 @@ def get_svg(is_dark):
     <line x1="20" y1="575" x2="1170" y2="575" stroke-dasharray="0"/>
 
     <!-- Bottom Section: Stats & Connect -->
-    <!-- GitHub Stats -->
     <text x="30" y="605" class="section-title" fill="#22c55e">💚 GitHub Stats</text>
     
     <!-- Repos -->
     <rect x="30" y="615" width="125" height="50" fill="{box_bg}" rx="6" stroke="{border_color}" stroke-width="1"/>
     <text x="40" y="632" class="box-title">📦 Repositories</text>
-    <text x="40" y="655" class="box-val" fill="#22c55e">95</text>
-    <text x="95" y="655" class="box-sub">Contributed: 133</text>
+    <text x="40" y="655" class="box-val" fill="#22c55e">{stats['repos']}</text>
+    <text x="95" y="655" class="box-sub">Public Repos</text>
     
     <!-- Commits -->
     <rect x="170" y="615" width="125" height="50" fill="{box_bg}" rx="6" stroke="{border_color}" stroke-width="1"/>
     <text x="180" y="632" class="box-title">🔄 Commits</text>
-    <text x="180" y="655" class="box-val" fill="#3b82f6">1,138</text>
-    <text x="240" y="655" class="box-sub">Total Commits</text>
+    <text x="180" y="655" class="box-val" fill="#3b82f6">{stats['commits']}</text>
+    <text x="240" y="655" class="box-sub">Last Year</text>
     
     <!-- Stars -->
     <rect x="310" y="615" width="125" height="50" fill="{box_bg}" rx="6" stroke="{border_color}" stroke-width="1"/>
     <text x="320" y="632" class="box-title">⭐ Stars</text>
-    <text x="320" y="655" class="box-val" fill="#eab308">342</text>
+    <text x="320" y="655" class="box-val" fill="#eab308">{stats['stars']}</text>
     <text x="375" y="655" class="box-sub">Total Stars</text>
     
     <!-- Followers -->
     <rect x="450" y="615" width="125" height="50" fill="{box_bg}" rx="6" stroke="{border_color}" stroke-width="1"/>
     <text x="460" y="632" class="box-title">👥 Followers</text>
-    <text x="460" y="655" class="box-val" fill="#ec4899">196</text>
-    <text x="505" y="655" class="box-sub">Across Repos</text>
+    <text x="460" y="655" class="box-val" fill="#ec4899">{stats['followers']}</text>
+    <text x="505" y="655" class="box-sub">Total Followers</text>
     
-    <!-- LoC -->
+    <!-- PRs -->
     <rect x="590" y="615" width="170" height="50" fill="{box_bg}" rx="6" stroke="{border_color}" stroke-width="1"/>
-    <text x="600" y="632" class="box-title">&lt;/&gt; Lines of Code</text>
-    <text x="600" y="655" class="box-val" fill="#f97316">523,178+</text>
+    <text x="600" y="632" class="box-title">🚀 Pull Requests</text>
+    <text x="600" y="655" class="box-val" fill="#f97316">{stats['prs']}</text>
+    <text x="650" y="655" class="box-sub">Total PRs</text>
     
     <!-- Connect -->
     <text x="790" y="605" class="section-title" fill="#2dd4bf">🤝 Let's Connect</text>
@@ -154,9 +190,12 @@ def get_svg(is_dark):
 """
     return svg
 
-with open('/mnt/personal file/from w11/github/oldregime_readme/dark_mode.svg', 'w', encoding='utf-8') as f:
-    f.write(get_svg(True))
-with open('/mnt/personal file/from w11/github/oldregime_readme/light_mode.svg', 'w', encoding='utf-8') as f:
-    f.write(get_svg(False))
+stats = fetch_stats()
+print("Fetched stats:", stats)
 
-print("Created SVGs with new ASCII art and updated exact stats!")
+with open('/mnt/personal file/from w11/github/oldregime_readme/dark_mode.svg', 'w', encoding='utf-8') as f:
+    f.write(get_svg(True, stats))
+with open('/mnt/personal file/from w11/github/oldregime_readme/light_mode.svg', 'w', encoding='utf-8') as f:
+    f.write(get_svg(False, stats))
+
+print("Created SVGs with dynamically fetched GitHub stats!")
