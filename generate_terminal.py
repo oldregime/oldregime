@@ -26,7 +26,7 @@ text_lines = """oldregime@github -----------------------------------------------
 
 ----------------------------------------- Contact
 
-.Email.................................. divyansh8065@gmail.com
+.Email.................................. divyanshjoshidev@gmail.com
 .GitHub................................. github.com/oldregime
 .LinkedIn............................... linkedin.com/in/divyansh-joshi
 
