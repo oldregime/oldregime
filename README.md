@@ -43,20 +43,3 @@
 <img src="https://komarev.com/ghpvc/?username=oldregime&label=Profile%20Views&color=blueviolet&style=flat"/>
 
 </p>
-
----
-
-## Quote
-
-> *"Programs must be written for people to read, and only incidentally for machines to execute."*  
-> — Harold Abelson
-
----
-
-<div align="center">
-
-### Thanks for visiting 👋
-
-*"Code is temporary. Skills are permanent."*
-
-</div>
