@@ -74,7 +74,7 @@ text, tspan {white-space: pre;}
 <tspan x="360" y="526"><tspan class="text">- </tspan><tspan class="key">GitHub Stats</tspan><tspan class="cc"> ——————————————————</tspan></tspan>
 <tspan x="360" y="544"></tspan>
 <tspan x="360" y="562"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">53</tspan> {<tspan class="key">Stars</tspan>: <tspan class="value">5</tspan>} | <tspan class="key">Following</tspan>:<tspan class="cc"> . </tspan><tspan class="value">8</tspan></tspan>
-<tspan x="360" y="580"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">633</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">2</tspan></tspan>
+<tspan x="360" y="580"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">635</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value">2</tspan></tspan>
 <tspan x="360" y="598"><tspan class="cc">. </tspan><tspan class="key">Pull Requests</tspan>:<tspan class="cc"> ........ </tspan><tspan class="value">0</tspan></tspan>
 
 </text>
