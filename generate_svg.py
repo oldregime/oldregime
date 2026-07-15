@@ -145,7 +145,7 @@ def kvd(k1, k2, value, pad=32):
             f':<tspan class="cc">{d}</tspan>'
             f'<tspan class="value">{esc(value)}</tspan>')
 
-def sec(title, width=52):
+def sec(title, width=60):
     dashes = '—' * max(width - len(title) - 4, 4)
     return f'- {esc(title)} -{dashes}-—-'
 
@@ -175,8 +175,8 @@ def make_svg(is_dark, stats):
     # ── Info lines (curated, clean) ──────────────────────────────────────────
     ln = stats
     rows = [
-        # Header — Andrew exact format
-        f'{esc(ln["login"])}@github -{"—" * 41}-—-',
+        # Header — Andrew exact format (extended dashes for 1060px width)
+        f'{esc(ln["login"])}@github -{"—" * 49}-—-',
         '',
         kv('OS',    'Fedora Linux 44, Windows 11, Android', 32),
         kv('Uptime', ln['age'], 32),
@@ -193,13 +193,13 @@ def make_svg(is_dark, stats):
         kvd('Hobbies', 'Software', 'AI Agents, Self-hosting, Automation',  32),
         kvd('Hobbies', 'Hardware', 'Homelab, Proxmox, TrueNAS, ZFS RAID', 32),
         '',
-        sec('Contact', 52),
+        sec('Contact', 60),
         '',
         kv('Email',   'divyanshjoshidev@gmail.com', 32),
         kv('Discord', 'theoldregime', 32),
         kv('LinkedIn','in/divyanshjoshidev', 32),
         '',
-        sec('GitHub Stats', 52),
+        sec('GitHub Stats', 60),
         '',
         # Repos + Stars + Followers — Andrew exact inline format
         (f'<tspan class="cc">. </tspan>'
@@ -250,7 +250,7 @@ def make_svg(is_dark, stats):
             info_svg += f'<tspan x="{IX}" y="{y}">{row}</tspan>\n'
 
     return f"""<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="{FONT}" width="985px" height="{H}px" font-size="{FS}px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="{FONT}" width="1060px" height="{H}px" font-size="{FS}px">
 <style>
 @font-face {{
 src: local('Consolas'), local('Consolas Bold');
@@ -266,7 +266,7 @@ size-adjust: 109%;
 .cc       {{fill: {CC};}}
 text, tspan {{white-space: pre;}}
 </style>
-<rect width="985px" height="{H}px" fill="{BG}" rx="15"/>
+<rect width="1060px" height="{H}px" fill="{BG}" rx="15"/>
 <text x="{AX}" y="{AY0}" fill="{FG}">
 {art_svg}
 </text>

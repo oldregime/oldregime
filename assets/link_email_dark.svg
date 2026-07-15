@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="120px" height="44px">
+<style>
+@font-face {
+src: local('Consolas'), local('Consolas Bold');
+font-family: 'ConsolasFallback';
+font-display: swap;
+}
+</style>
+<rect width="120" height="44" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+<svg x="48" y="8" width="24" height="24" viewBox="0 0 24 24">
+  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#616e7f"/>
+</svg>
+<text x="60" y="38" font-family="ConsolasFallback,Consolas,monospace" font-size="10" fill="#8b949e" text-anchor="middle">Email</text>
+</svg>
