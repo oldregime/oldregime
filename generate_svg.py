@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 """
 Andrew6rant-exact neofetch SVG profile generator for Divyansh Joshi (oldregime).
-
-Exact colors/font/style from Andrew6rant/Andrew6rant dark_mode.svg + light_mode.svg.
-Runs locally and in GitHub Actions.
 """
 
 from __future__ import annotations
@@ -11,7 +8,6 @@ import subprocess, json, sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-# ─── Andrew6rant's original ASCII portrait art (dark / light variants) ───────
 ASCII_DARK = """\
            g@M%@%%@N%Nw,,
         ,M*|`||*%gNM=]mM%g||%N,
@@ -62,11 +58,10 @@ ASCII_LIGHT = """\
            '!,       |||,||@M|L
             ||l&$@$$@$$$@$MT|||
          |    |||lll$$llll|||||L
-    ,;y@        ||||||l||@|||||l
+     ,;y@        ||||||l||@|||||l
 ,g$@$$$@         |||||||||||||||| $g,
 $$$$$$$$@    |    |||||||||||||| |$$@g"""
 
-# ─── GitHub helpers ──────────────────────────────────────────────────────────
 def run(*cmd):
     try:
         return subprocess.check_output(list(cmd), stderr=subprocess.DEVNULL).decode().strip()
@@ -104,7 +99,6 @@ def fetch_stats():
             stats['commits'] = str(
                 json.loads(g)['data']['user']['contributionsCollection']['contributionCalendar']['totalContributions'])
 
-        # LOC via contributor stats API (per-repo)
         add_t = del_t = 0
         repos = [r for r in run('gh','api',f'users/{login}/repos','--paginate','-q','.[].name').split('\n') if r.strip()]
         for repo in repos:
@@ -126,30 +120,12 @@ def fetch_stats():
         print(f'Warning: {e}', file=sys.stderr)
     return stats
 
-# ─── SVG helpers ─────────────────────────────────────────────────────────────
 def esc(s): return s.replace('&','&amp;').replace('<','&lt;').replace('>','&gt;')
 
-def kv(key, value, pad=32):
-    d = ' ' + '.' * max(pad - len(key) - 1, 1) + ' '
-    return (f'<tspan class="cc">. </tspan>'
-            f'<tspan class="key">{esc(key)}</tspan>'
-            f':<tspan class="cc">{d}</tspan>'
-            f'<tspan class="value">{esc(value)}</tspan>')
-
-def kvd(k1, k2, value, pad=32):
-    key = f'{k1}.{k2}'
-    d   = ' ' + '.' * max(pad - len(key) - 1, 1) + ' '
-    return (f'<tspan class="cc">. </tspan>'
-            f'<tspan class="key">{esc(k1)}</tspan>'
-            f'.<tspan class="key">{esc(k2)}</tspan>'
-            f':<tspan class="cc">{d}</tspan>'
-            f'<tspan class="value">{esc(value)}</tspan>')
-
-def sec(title, width=60):
+def sec(title, width=41):
     dashes = '—' * max(width - len(title) - 4, 4)
     return f'- {esc(title)} -{dashes}-—-'
 
-# ─── SVG maker ───────────────────────────────────────────────────────────────
 def make_svg(is_dark, stats):
     if is_dark:
         BG, FG = '#161b22', '#c9d1d9'
@@ -162,95 +138,103 @@ def make_svg(is_dark, stats):
         ADD, DEL = '#1a7f37', '#cf222e'
         ART = ASCII_LIGHT
 
-    # Andrew6rant exact spec
     FONT  = 'ConsolasFallback,Consolas,monospace'
-    FS    = 16          # font-size px
-    LH    = 20          # line-height px (Andrew uses 20px gaps)
-    AX    = 15          # ascii art x start
-    AY0   = 30          # ascii art first baseline y
-    IX    = 390         # info column x
-    IY0   = 30          # info first baseline y
-    PAD_B = 30          # bottom breathing room (px below last baseline — descenders need ~8px extra)
+    FS    = 16          
+    LH    = 20          
+    AX    = 15          
+    AY0   = 30          
+    IX    = 385         
+    IY0   = 30          
+    PAD_B = 30          
 
-    # ── Info lines (curated, clean) ──────────────────────────────────────────
     ln = stats
-    rows = [
-        # Header — Andrew exact format (extended dashes for 1060px width)
-        f'{esc(ln["login"])}@github -{"—" * 49}-—-',
-        '',
-        kv('OS',    'Fedora Linux 44, Windows 11, Android', 32),
-        kv('Uptime', ln['age'], 32),
-        kv('Host',  'VIT Bhopal University, India 🇮🇳', 32),
-        kv('Role',  'CS Undergrad  ·  Software Engineer', 32),
-        kv('IDE',   'VS Code, JetBrains, Neovim', 32),
-        kv('Shell', 'zsh  ·  Kitty', 32),
-        '',
-        kvd('Languages', 'Programming', 'Python, C++, JavaScript, TypeScript', 32),
-        kvd('Languages', 'AI_ML',       'LangChain, LangGraph, PyTorch, Groq',  32),
-        kvd('Languages', 'Web',         'React, Node.js, Fastify, HTML/CSS',    32),
-        kvd('Languages', 'Systems',     'Docker, Linux, Nginx, Git, Bash',       32),
-        '',
-        kvd('Hobbies', 'Software', 'AI Agents, Self-hosting, Automation',  32),
-        kvd('Hobbies', 'Hardware', 'Homelab, Proxmox, TrueNAS, ZFS RAID', 32),
-        '',
-        sec('Contact', 60),
-        '',
-        kv('Email',   'divyanshjoshidev@gmail.com', 32),
-        kv('Discord', 'theoldregime', 32),
-        kv('LinkedIn','in/divyanshjoshidev', 32),
-        '',
-        sec('GitHub Stats', 60),
-        '',
-        # Repos + Stars + Followers — Andrew exact inline format
-        (f'<tspan class="cc">. </tspan>'
-         f'<tspan class="key">Repos</tspan>:'
-         f'<tspan class="cc" id="repo_data_dots"> .... </tspan>'
-         f'<tspan class="value" id="repo_data">{ln["repos"]}</tspan>'
-         f' {{<tspan class="key">Stars</tspan>:'
-         f'<tspan class="cc" id="star_data_dots"> ........... </tspan>'
-         f'<tspan class="value" id="star_data">{ln["stars"]}</tspan>}}'
-         f' | <tspan class="key">Followers</tspan>:'
-         f'<tspan class="cc" id="follower_data_dots"> ....... </tspan>'
-         f'<tspan class="value" id="follower_data">{ln["followers"]}</tspan>'),
-        # Commits line
-        (f'<tspan class="cc">. </tspan>'
-         f'<tspan class="key">Commits</tspan>:'
-         f'<tspan class="cc" id="commit_data_dots"> ................. </tspan>'
-         f'<tspan class="value" id="commit_data">{ln["commits"]}</tspan>'),
-        # Lines of Code — Andrew exact format with addColor / delColor
-        (f'<tspan class="cc">. </tspan>'
-         f'<tspan class="key">Lines of Code on GitHub</tspan>:'
-         f'<tspan class="cc" id="loc_data_dots">. </tspan>'
-         f'<tspan class="value" id="loc_data">{ln["loc_net"]}</tspan>'
-         f' ( <tspan class="addColor" id="loc_add">{ln["loc_add"]}</tspan>'
-         f'<tspan class="addColor">++</tspan>, '
-         f'<tspan id="loc_del_dots"> </tspan>'
-         f'<tspan class="delColor" id="loc_del">{ln["loc_del"]}</tspan>'
-         f'<tspan class="delColor">--</tspan> )'),
-    ]
+    rows = []
 
-    # ── Auto-size canvas height ───────────────────────────────────────────────
+    def add_raw(s): rows.append(s)
+    def add_blank(): rows.append(f'<tspan class="cc">. </tspan>')
+
+    def add_kv(key, val, pad=21, max_val=38):
+        d = ' ' + '.' * max(pad - len(key) - 1, 1) + ' '
+        if len(val) <= max_val:
+            rows.append(f'<tspan class="cc">. </tspan><tspan class="key">{esc(key)}</tspan>:<tspan class="cc">{d}</tspan><tspan class="value">{esc(val)}</tspan>')
+        else:
+            words = val.split(', ')
+            l1, l2 = [], []
+            for w in words:
+                if len(', '.join(l1 + [w])) <= max_val:
+                    l1.append(w)
+                else:
+                    l2.append(w)
+            v1 = ', '.join(l1) + ','
+            v2 = ', '.join(l2)
+            rows.append(f'<tspan class="cc">. </tspan><tspan class="key">{esc(key)}</tspan>:<tspan class="cc">{d}</tspan><tspan class="value">{esc(v1)}</tspan>')
+            
+            indent = ' ' * (len(key) + 1 + len(d) - 1)
+            rows.append(f'<tspan class="cc">. </tspan><tspan class="cc">{indent}</tspan><tspan class="value">{esc(v2)}</tspan>')
+
+    def add_kvd(k1, k2, val, pad=21, max_val=38):
+        add_kv(f'{k1}.{k2}', val, pad, max_val)
+
+    add_raw(f'{esc(ln["login"])}@github -{"—" * 41}-—-')
+    add_blank()
+    add_kv('OS', 'Fedora Linux 44, Windows 11, Android')
+    add_kv('Uptime', ln['age'])
+    add_kv('Host', 'VIT Bhopal University, India 🇮🇳')
+    add_kv('Role', 'CS Undergrad  ·  Software Engineer')
+    add_kv('IDE', 'VS Code, JetBrains, Neovim')
+    add_kv('Shell', 'zsh  ·  Kitty')
+    add_blank()
+    add_kvd('Languages', 'Programming', 'Python, C++, JavaScript, TypeScript')
+    add_kvd('Languages', 'AI_ML', 'LangChain, LangGraph, PyTorch, Groq')
+    add_kvd('Languages', 'Web', 'React, Node.js, Fastify, HTML/CSS')
+    add_kvd('Languages', 'Systems', 'Docker, Linux, Nginx, Git, Bash')
+    add_blank()
+    add_kvd('Hobbies', 'Software', 'AI Agents, Self-hosting, Automation')
+    add_kvd('Hobbies', 'Hardware', 'Homelab, Proxmox, TrueNAS, ZFS RAID')
+    add_blank()
+    add_raw(sec('Contact', 42))
+    add_blank()
+    add_kv('Email', 'divyanshjoshidev@gmail.com')
+    add_kv('Discord', 'theoldregime')
+    add_kv('LinkedIn', 'in/divyanshjoshidev')
+    add_blank()
+    add_raw(sec('GitHub Stats', 42))
+    add_blank()
+
+    rows.append(f'<tspan class="cc">. </tspan>'
+         f'<tspan class="key">Repos</tspan>:<tspan class="cc"> ..... </tspan>'
+         f'<tspan class="value">{ln["repos"]}</tspan>'
+         f' {{<tspan class="key">Stars</tspan>:<tspan class="cc"> ... </tspan>'
+         f'<tspan class="value">{ln["stars"]}</tspan>}}'
+         f' | <tspan class="key">Followers</tspan>:<tspan class="cc"> .. </tspan>'
+         f'<tspan class="value">{ln["followers"]}</tspan>')
+    
+    rows.append(f'<tspan class="cc">. </tspan>'
+         f'<tspan class="key">Commits</tspan>:<tspan class="cc"> ...................... </tspan>'
+         f'<tspan class="value">{ln["commits"]}</tspan>')
+         
+    rows.append(f'<tspan class="cc">. </tspan>'
+         f'<tspan class="key">LOC</tspan>:<tspan class="cc"> . </tspan>'
+         f'<tspan class="value">{ln["loc_net"]}</tspan>'
+         f' (<tspan class="addColor">{ln["loc_add"]}++</tspan>, '
+         f'<tspan class="delColor">{ln["loc_del"]}--</tspan>)')
+
     art_lines  = ART.split('\n')
-    art_height = AY0 + len(art_lines) * LH          # bottom of last art line
-    inf_height = IY0 + (len(rows) - 1) * LH          # bottom of last info line (y baseline)
-    H  = max(art_height, inf_height) + PAD_B          # canvas height
+    art_height = AY0 + len(art_lines) * LH          
+    inf_height = IY0 + (len(rows) - 1) * LH          
+    H  = max(art_height, inf_height) + PAD_B          
 
-    # ── Build art tspans ─────────────────────────────────────────────────────
     art_svg = ''
     for i, line in enumerate(art_lines):
         art_svg += f'<tspan x="{AX}" y="{AY0 + i*LH}">{esc(line)}</tspan>\n'
 
-    # ── Build info tspans ────────────────────────────────────────────────────
     info_svg = ''
     for i, row in enumerate(rows):
         y = IY0 + i * LH
-        if row == '':
-            info_svg += f'<tspan x="{IX}" y="{y}" class="cc">. </tspan>\n'
-        else:
-            info_svg += f'<tspan x="{IX}" y="{y}">{row}</tspan>\n'
+        info_svg += f'<tspan x="{IX}" y="{y}">{row}</tspan>\n'
 
     return f"""<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="{FONT}" width="1060px" height="{H}px" font-size="{FS}px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="{FONT}" width="985px" height="{H}px" font-size="{FS}px">
 <style>
 @font-face {{
 src: local('Consolas'), local('Consolas Bold');
@@ -266,7 +250,7 @@ size-adjust: 109%;
 .cc       {{fill: {CC};}}
 text, tspan {{white-space: pre;}}
 </style>
-<rect width="1060px" height="{H}px" fill="{BG}" rx="15"/>
+<rect width="985px" height="{H}px" fill="{BG}" rx="15"/>
 <text x="{AX}" y="{AY0}" fill="{FG}">
 {art_svg}
 </text>
@@ -276,7 +260,6 @@ text, tspan {{white-space: pre;}}
 </svg>
 """
 
-# ─── Entry point ─────────────────────────────────────────────────────────────
 if __name__ == '__main__':
     print('⚙  Fetching live GitHub stats...', flush=True)
     s = fetch_stats()
