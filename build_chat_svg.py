@@ -25,11 +25,10 @@ def get_weather():
     except Exception as e:
         return "warm and <tspan class=\"emoji\">☀️</tspan> today."
 
-def get_isometric_graph_b64():
-    # Read the locally generated isometric SVG
-    with open('/tmp/iso.svg', 'rb') as f:
-        svg_data = f.read()
-    return base64.b64encode(svg_data).decode('utf-8')
+def get_perry_b64():
+    with open('/home/dj/Downloads/Profile_-_Perry_the_Platypus.PNG.webp', 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode('utf-8')
 
 def generate_svg():
     with open("jason_chat.svg", "r", encoding="utf-8") as f:
@@ -37,12 +36,10 @@ def generate_svg():
 
     day = datetime.datetime.now().strftime("%A")
     weather_str = get_weather()
-    iso_b64 = get_isometric_graph_b64()
+    perry_b64 = get_perry_b64()
 
     # Msg 1
-    # Fixing the backslash issue using simple string replacement for safety
     svg = svg.replace('<text x="15" y="27">Hi, I\'m Jason</text>', '<text x="15" y="27">Hi, I am Divyansh</text>')
-    # Fix the width. Original was 133 and class was "msg-1 bubble"
     svg = re.sub(r'(<g[^>]*class="msg-1 bubble"[^>]*>\s*<rect[^>]*)width="133"', r'\1width="180"', svg)
     
     # Msg 2
@@ -54,23 +51,30 @@ def generate_svg():
     svg = svg.replace('<text x="15" y="50">but I’ve been at PlanetScale for over 5 years now.</text>', '<text x="15" y="50">systems, distributed storage, and AI pipelines.</text>')
     
     # Msg 4
-    svg = svg.replace('<text x="15" y="27">My favorite project is isometric-contributions. It’s a </text>', '<text x="15" y="27">I love Self-Hosting and Linux Distro hopping.</text>')
-    svg = svg.replace('<text x="15" y="50">browser extension that shows your GitHub </text>', '<text x="15" y="50">Here is my isometric contribution graph:</text>')
+    svg = svg.replace('<text x="15" y="27">My favorite project is isometric-contributions. It’s a </text>', '<text x="15" y="27">rather than boring you with my leetcode ,</text>')
+    svg = svg.replace('<text x="15" y="50">browser extension that shows your GitHub </text>', '<text x="15" y="50">here is a platypus that is also a detective </text>')
     svg = svg.replace('<text x="15" y="73">contributions like this</text>', '')
     
-    # Replace Jason's image with Divyansh's generated base64 SVG image
-    # We must match href= instead of xlink:href= because jason's original file used href=
-    svg = re.sub(r'<image\s+[^>]*href="data:image[^>]*>', f'<image x="15" y="70" width="440" height="258" href="data:image/svg+xml;base64,{iso_b64}" />', svg)
+    # Replace Jason's image with Perry
+    svg = re.sub(r'<image\s+[^>]*href="data:image[^>]*>', f'<image x="15" y="70" width="360" height="316" href="data:image/webp;base64,{perry_b64}" />', svg)
     
-    # Adjust msg-4 bubble height precisely to enclose the image
-    svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)height="363"', r'\1height="350"', svg)
+    # Adjust msg-4 bubble height (70 + 316 + 20 = 406) and width (360 + 30 = 390)
+    svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)width="470"', r'\1width="390"', svg)
+    svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)height="363"', r'\1height="406"', svg)
     
     # Msg 5
     svg = svg.replace('<text x="15" y="27">You can find me on Bluesky at</text>', '<text x="15" y="27">You can get in touch with me on email at</text>')
     svg = svg.replace('<a xlink:href="https://bsky.app/profile/jasonlong.me">https://bsky.app/profile/jasonlong.me</a>', '<a xlink:href="mailto:divyanshjoshidev@gmail.com">divyanshjoshidev@gmail.com</a>')
     svg = re.sub(r'(<g[^>]*class="msg-5"[^>]*>\s*<rect[^>]*)width="350"', r'\1width="415"', svg)
     
-    # Update translate for g tags
+    # Recalculate Y positions
+    # msg-1: Y=0
+    # msg-2: Y=57
+    # msg-3: Y=138
+    # msg-4: Y=219
+    # msg-5: Y = 219 + 406 + 15 = 640
+    # msg-6: Y = 640 + 66 + 15 = 721
+    
     svg = re.sub(r'translate\(10, 48\)', r'translate(10, 57)', svg)
     svg = re.sub(r'transform: translate\(10px, 53px\);', r'transform: translate(10px, 62px);', svg)
     svg = re.sub(r'transform: translate\(10px, 48px\);', r'transform: translate(10px, 57px);', svg)
@@ -83,16 +87,19 @@ def generate_svg():
     svg = re.sub(r'transform: translate\(10px, 197px\);', r'transform: translate(10px, 224px);', svg)
     svg = re.sub(r'transform: translate\(10px, 192px\);', r'transform: translate(10px, 219px);', svg)
     
-    svg = re.sub(r'translate\(10, 560\)', r'translate(10, 584)', svg)
-    svg = re.sub(r'transform: translate\(10px, 565px\);', r'transform: translate(10px, 589px);', svg)
-    svg = re.sub(r'transform: translate\(10px, 560px\);', r'transform: translate(10px, 584px);', svg)
+    svg = re.sub(r'translate\(10, 560\)', r'translate(10, 640)', svg)
+    svg = re.sub(r'transform: translate\(10px, 565px\);', r'transform: translate(10px, 645px);', svg)
+    svg = re.sub(r'transform: translate\(10px, 560px\);', r'transform: translate(10px, 640px);', svg)
     
-    svg = re.sub(r'translate\(10, 632\)', r'translate(10, 665)', svg)
-    svg = re.sub(r'transform: translate\(10px, 637px\);', r'transform: translate(10px, 670px);', svg)
-    svg = re.sub(r'transform: translate\(10px, 632px\);', r'transform: translate(10px, 665px);', svg)
+    svg = re.sub(r'translate\(10, 632\)', r'translate(10, 721)', svg)
+    svg = re.sub(r'transform: translate\(10px, 637px\);', r'transform: translate(10px, 726px);', svg)
+    svg = re.sub(r'transform: translate\(10px, 632px\);', r'transform: translate(10px, 721px);', svg)
 
     # Scale SVG
-    svg = re.sub(r'<svg width="550" height="684" viewBox="0 0 550 684"', r'<svg width="467" height="617" viewBox="0 0 550 727"', svg)
+    # Original viewBox 550x684. New height needed: 721 + 42 + 20 = 783.
+    # So viewBox="0 0 550 783"
+    # width="467" height="665" (approx 85% of 550x783)
+    svg = re.sub(r'<svg width="[0-9]*" height="[0-9]*" viewBox="0 0 550 [0-9]*"', r'<svg width="467" height="665" viewBox="0 0 550 783"', svg)
 
     # Msg 6
     svg = re.sub(r'<text x="15" y="27">Have a great Wednesday! <tspan class="emoji">✌🏻</tspan></text>', f'<text x="15" y="27">Have a great {day}! <tspan class="emoji">✌🏻</tspan></text>', svg)
