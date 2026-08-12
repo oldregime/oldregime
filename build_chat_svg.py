@@ -59,8 +59,8 @@ def generate_svg():
     svg = re.sub(r'<image\s+[^>]*href="data:image[^>]*>', f'<image x="15" y="70" width="360" height="316" href="data:image/webp;base64,{perry_b64}" />', svg)
     
     # Adjust msg-4 bubble height (70 + 316 + 20 = 406) and width (360 + 30 = 390)
-    svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)width="470"', r'\1width="390"', svg)
-    svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)height="363"', r'\1height="406"', svg)
+    svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)width="456"', r'\1width="390"', svg)
+    svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)height="92"', r'\1height="406"', svg)
     
     # Msg 5
     svg = svg.replace('<text x="15" y="27">You can find me on Bluesky at</text>', '<text x="15" y="27">You can get in touch with me on email at</text>')

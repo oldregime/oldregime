@@ -321,7 +321,7 @@
 
   <!-- isometric-contributions -->
   <g transform="translate(10, 219)" class="msg-4">
-    <rect width="456" height="92" rx="18" class="bubble" />
+    <rect width="390" height="406" rx="18" class="bubble" />
     <text x="15" y="27">rather than boring you with my leetcode ,</text>
     <text x="15" y="50">here is a platypus that is also a detective </text>
     
