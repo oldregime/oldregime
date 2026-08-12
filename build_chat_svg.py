@@ -42,7 +42,8 @@ def generate_svg():
     # Msg 1
     # Fixing the backslash issue using simple string replacement for safety
     svg = svg.replace('<text x="15" y="27">Hi, I\'m Jason</text>', '<text x="15" y="27">Hi, I am Divyansh</text>')
-    svg = re.sub(r'(<g[^>]*class="msg-1"[^>]*>\s*<rect[^>]*)width="138"', r'\1width="180"', svg)
+    # Fix the width. Original was 133 and class was "msg-1 bubble"
+    svg = re.sub(r'(<g[^>]*class="msg-1 bubble"[^>]*>\s*<rect[^>]*)width="133"', r'\1width="180"', svg)
     
     # Msg 2
     svg = svg.replace('<text x="15" y="27">I live in Columbus, Ohio where it’s supposed to be</text>', '<text x="15" y="27">I live in Indore, India where it’s supposed to be</text>')
@@ -58,7 +59,8 @@ def generate_svg():
     svg = svg.replace('<text x="15" y="73">contributions like this</text>', '')
     
     # Replace Jason's image with Divyansh's generated base64 SVG image
-    svg = re.sub(r'<image[^>]*xlink:href="data:image/[^;]+;base64,[^"]+"', f'<image x="15" y="70" width="440" height="258" xlink:href="data:image/svg+xml;base64,{iso_b64}"', svg)
+    # We must match href= instead of xlink:href= because jason's original file used href=
+    svg = re.sub(r'<image\s+[^>]*href="data:image[^>]*>', f'<image x="15" y="70" width="440" height="258" href="data:image/svg+xml;base64,{iso_b64}" />', svg)
     
     # Adjust msg-4 bubble height precisely to enclose the image
     svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)height="363"', r'\1height="350"', svg)
