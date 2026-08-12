@@ -40,7 +40,9 @@ def generate_svg():
     iso_b64 = get_isometric_graph_b64()
 
     # Msg 1
+    # Fixing the backslash issue and widening the bubble to 180px
     svg = re.sub(r'<text x="15" y="27">Hi, I\'m Jason</text>', r'<text x="15" y="27">Hi, I\'m Divyansh</text>', svg)
+    svg = re.sub(r'(<g[^>]*class="msg-1"[^>]*>\s*<rect[^>]*)width="138"', r'\1width="180"', svg)
     
     # Msg 2
     svg = re.sub(r'<text x="15" y="27">I live in Columbus, Ohio where it’s supposed to be</text>', r'<text x="15" y="27">I live in Indore, India where it’s supposed to be</text>', svg)
@@ -56,37 +58,64 @@ def generate_svg():
     svg = re.sub(r'<text x="15" y="73">contributions like this</text>', r'', svg)
     
     # Replace Jason's image with Divyansh's generated base64 image
-    # Note: Jason's image has height="258" width="440". We will keep the same dimensions.
     svg = re.sub(r'(<image[^>]*xlink:href="data:image/png;base64,)[^"]+(")', rf'\g<1>{iso_b64}\g<2>', svg)
     
-    # The bubble height for msg-4 was 363. The text is now 2 lines instead of 3. We can shift the image up slightly and reduce bubble height by 23px.
-    # New image Y = 70. New bubble height = 340.
+    # Adjust msg-4 bubble height precisely to enclose the image
     svg = re.sub(r'<image x="15" y="90"', r'<image x="15" y="70"', svg)
-    svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)height="363"', r'\1height="340"', svg)
+    svg = re.sub(r'(<g[^>]*class="msg-4"[^>]*>\s*<rect[^>]*)height="363"', r'\1height="350"', svg)
     
     # Msg 5
     svg = re.sub(r'<text x="15" y="27">You can find me on Bluesky at</text>', r'<text x="15" y="27">You can get in touch with me on email at</text>', svg)
     svg = re.sub(r'<a xlink:href="https://bsky.app/profile/jasonlong.me">https://bsky.app/profile/jasonlong.me</a>', r'<a xlink:href="mailto:divyanshjoshidev@gmail.com">divyanshjoshidev@gmail.com</a>', svg)
+    svg = re.sub(r'(<g[^>]*class="msg-5"[^>]*>\s*<rect[^>]*)width="350"', r'\1width="415"', svg)
     
-    # Adjust msg-5 bubble width to fit the email address text (width 390 instead of 350)
-    svg = re.sub(r'(<g[^>]*class="msg-5"[^>]*>\s*<rect[^>]*)width="350"', r'\1width="390"', svg)
+    # Recalculate all Y positions with 15px gap (original gap was 6px)
+    # y_msg1 = 0
+    # y_msg2 = 57
+    # y_msg3 = 138
+    # y_msg4 = 219
+    # y_msg5 = 219 + 350 + 15 = 584
+    # y_msg6 = 584 + 66 + 15 = 665
     
-    # Adjust Y coordinates for subsequent animations and bubbles since we shrank msg-4 by 23px
-    # 560 - 23 = 537
-    # 632 - 23 = 609
-    svg = re.sub(r'translate\(10, 560\)', r'translate(10, 537)', svg)
-    svg = re.sub(r'translate\(10, 632\)', r'translate(10, 609)', svg)
-    svg = re.sub(r'translate\(10px, 565px\)', r'translate(10px, 542px)', svg)
-    svg = re.sub(r'translate\(10px, 560px\)', r'translate(10px, 537px)', svg)
-    svg = re.sub(r'translate\(10px, 637px\)', r'translate(10px, 614px)', svg)
-    svg = re.sub(r'translate\(10px, 632px\)', r'translate(10px, 609px)', svg)
+    # Update translate for g tags
+    # Original values in jason_chat.svg: 
+    # msg-1: (10, 0)
+    # msg-2: (10, 48)
+    # msg-3: (10, 120)
+    # msg-4: (10, 192)
+    # msg-5: (10, 560)
+    # msg-6: (10, 632)
     
-    # Change total SVG height (original 684 - 23 = 661)
-    svg = re.sub(r'height="684"', r'height="661"', svg)
-    svg = re.sub(r'viewBox="0 0 550 684"', r'viewBox="0 0 550 661"', svg)
+    # Update msg-2
+    svg = re.sub(r'translate\(10, 48\)', r'translate(10, 57)', svg)
+    svg = re.sub(r'transform: translate\(10px, 53px\);', r'transform: translate(10px, 62px);', svg)
+    svg = re.sub(r'transform: translate\(10px, 48px\);', r'transform: translate(10px, 57px);', svg)
     
-    # Msg 6
-    svg = re.sub(r'<text x="15" y="27">Have a great Wednesday! <tspan class="emoji">✌🏻</tspan></text>', f'<text x="15" y="27">Have a great {day}! <tspan class="emoji">✌🏻</tspan></text>', svg)
+    # Update msg-3
+    svg = re.sub(r'translate\(10, 120\)', r'translate(10, 138)', svg)
+    svg = re.sub(r'transform: translate\(10px, 125px\);', r'transform: translate(10px, 143px);', svg)
+    svg = re.sub(r'transform: translate\(10px, 120px\);', r'transform: translate(10px, 138px);', svg)
+    
+    # Update msg-4
+    svg = re.sub(r'translate\(10, 192\)', r'translate(10, 219)', svg)
+    svg = re.sub(r'transform: translate\(10px, 197px\);', r'transform: translate(10px, 224px);', svg)
+    svg = re.sub(r'transform: translate\(10px, 192px\);', r'transform: translate(10px, 219px);', svg)
+    
+    # Update msg-5
+    svg = re.sub(r'translate\(10, 560\)', r'translate(10, 584)', svg)
+    svg = re.sub(r'transform: translate\(10px, 565px\);', r'transform: translate(10px, 589px);', svg)
+    svg = re.sub(r'transform: translate\(10px, 560px\);', r'transform: translate(10px, 584px);', svg)
+    
+    # Update msg-6
+    svg = re.sub(r'translate\(10, 632\)', r'translate(10, 665)', svg)
+    svg = re.sub(r'transform: translate\(10px, 637px\);', r'transform: translate(10px, 670px);', svg)
+    svg = re.sub(r'transform: translate\(10px, 632px\);', r'transform: translate(10px, 665px);', svg)
+
+    # Change total SVG height and width to scale it down slightly (85% scale)
+    # Original viewBox="0 0 550 684", new height needed is 665 + 42 + 20 = 727
+    # So viewBox="0 0 550 727"
+    # width="467" height="617" (approx 85% of 550x727)
+    svg = re.sub(r'<svg width="550" height="684" viewBox="0 0 550 684"', r'<svg width="467" height="617" viewBox="0 0 550 727"', svg)
 
     with open("chat.svg", "w", encoding="utf-8") as f:
         f.write(svg)
