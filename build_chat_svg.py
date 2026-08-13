@@ -26,7 +26,11 @@ def get_weather():
         return "warm and <tspan class=\"emoji\">☀️</tspan> today."
 
 def get_perry_b64():
-    with open('/home/dj/Downloads/Profile_-_Perry_the_Platypus.PNG.webp', 'rb') as f:
+    import os
+    file_path = "perry.webp"
+    if not os.path.exists(file_path):
+        file_path = '/home/dj/Downloads/Profile_-_Perry_the_Platypus.PNG.webp'
+    with open(file_path, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode('utf-8')
 

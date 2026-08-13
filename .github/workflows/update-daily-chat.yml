@@ -1,0 +1,33 @@
+name: Daily Chat SVG Update
+
+on:
+  schedule:
+    # Runs every day at 00:05 UTC (05:35 IST)
+    - cron: "5 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-chat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate updated chat.svg
+        run: python3 build_chat_svg.py
+
+      - name: Commit and push updated chat.svg
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add chat.svg
+          git diff --cached --quiet || git commit -m "chore: update daily day & weather in chat.svg [$(date -u '+%Y-%m-%d')]"
+          git push
